@@ -1,11 +1,20 @@
 <template>
   <div id="app">
+    <Title 
+    class="blueTitle"
+    type="h1"
+    tMessage="First Tab"
+    />
   </div>
 </template>
 
 <script>
+import Title from './components/micro/Title/Title.vue';
 export default {
   name: "App",
+  components:{
+    Title
+}
 };
 </script>
 
