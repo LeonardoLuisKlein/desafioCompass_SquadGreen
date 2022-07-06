@@ -1,0 +1,42 @@
+/* Sizes */
+.lowSize {
+    font-size: 0.75em;
+    line-height: 1.125;
+}
+.mediumLowSize {
+    font-size: 0.875em;
+    line-height: 1.5;
+}
+.regularSize {
+    font-size: 1em;
+    line-height: 1.5;
+}
+.highSize {
+    font-size: 1.5em;
+    line-height: 2.25;
+}
+
+/* Color */
+.darkColor {
+    color: #111111;
+}
+
+.grayColor {
+    color: #767676;
+}
+
+/* Text alignment */
+.center {
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+
+/* Error */
+.error {
+    color: #FF0000;
+}
