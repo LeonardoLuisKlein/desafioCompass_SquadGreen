@@ -1,14 +1,18 @@
 <template>
     <div>
-        <input type="checkbox" id="checkbox" :v-model="text">
+        <Inputs type="checkbox" inputClass="checkbox" :v-model="text" />
         <label for="checkbox">{{ text }}</label>
     </div>
 </template>
 
 <script>
+import Inputs from '@/components/micro/Inputs/Inputs.vue'
 
 export default {
     name: "CheckboxComponent",
+    components:{ 
+        Inputs
+    },
     props: {
         text: {
             type: String
