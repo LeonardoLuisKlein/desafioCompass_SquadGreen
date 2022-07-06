@@ -5,15 +5,22 @@
     type="h1"
     tMessage="First Tab"
     />
+    <Inputs
+    type="text"
+    inputClass="smallInput inputBorder"
+    placeHolder="bom dia"
+    />
   </div>
 </template>
 
 <script>
 import Title from './components/micro/Title/Title.vue';
+import Inputs from './components/micro/Inputs/Inputs.vue';
 export default {
   name: "App",
   components:{
-    Title
+    Title,
+    Inputs
 }
 };
 </script>

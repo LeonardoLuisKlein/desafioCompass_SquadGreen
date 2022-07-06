@@ -1,0 +1,21 @@
+div{
+    input:focus {
+        outline: 0;
+      }
+    .inputBorder{
+        border: 2px solid #AAAAAA;
+        border-radius: 4px;
+    }
+    .smallInput{
+        height: 2.5em;
+        width: 40%;      
+    }
+    .mediumInput{
+        height: 2.5em;
+        width: 60%;
+    }
+    .bigInput{
+        height: 2.5em;
+        width: 80%;
+    }
+}
