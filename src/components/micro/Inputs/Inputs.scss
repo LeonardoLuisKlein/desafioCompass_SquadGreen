@@ -1,0 +1,31 @@
+div{
+    /* Inputs style */
+    input{
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1em;
+    }
+    input:focus {
+        outline: 0;
+      }
+    .inputBorder{
+        border: 2px solid #AAAAAA;
+        border-radius: 4px;
+    }
+    /* Inputs sizes */
+    .smallInput{
+        height: 2.5em;
+        width: 40%;      
+    }
+    .mediumInput{
+        height: 2.5em;
+        width: 60%;
+    }
+    .bigInput{
+        height: 2.5em;
+        width: 80%;
+    }
+}
+
+    /* Inputs media */
