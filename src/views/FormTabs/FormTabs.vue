@@ -1,15 +1,17 @@
 <template>
   <div>
-    <Inputs type="text" inputClass="smallTitle inputBorder" /> 
+    <Label text="Oi" className="defaultLabel"/>
   </div>
 </template>
 
 <script>
-import Inputs from '@/components/micro/Inputs/Inputs.vue';
+import Label from "@/components/micro/Label/Label.vue"
+
 export default {
     name: "FormTabs",
-    components: { Inputs 
-    }
+    components: {
+      Label,
+},  
 }
 </script>
 
