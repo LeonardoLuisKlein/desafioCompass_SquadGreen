@@ -9,9 +9,6 @@
 
 * {
   font-family: "Inter", "Nunito", sans-serif;
-}
-
-.disable-select {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
