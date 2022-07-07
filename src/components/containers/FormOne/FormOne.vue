@@ -3,7 +3,11 @@
     <Header />
     <div id="formOne">
       <div class="sectionForm">
-        
+        <div class="divTitle">
+          <div class="teste">
+            <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault"/>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -12,10 +16,11 @@
 <script>
 
 import Header from '../../experience-fragments/Header/Header.vue'
+import Title from '@/components/micro/Title/Title.vue'
 
 export default {
   name: "formOne",
-  components: { Header }
+  components: { Header, Title }
 }
 </script>
 
