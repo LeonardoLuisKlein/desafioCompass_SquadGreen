@@ -6,6 +6,11 @@
         <div class="divTitle">
             <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault"/>
         </div>
+        <div class="buttonsTop">
+            <Button text="Basic" classButton="Border"/>
+            <Button text="Social" classButton="Border"/>
+            <Button text="Certificates" classButton="Border"/>
+        </div>
       </div>
     </div>
   </div>
@@ -15,10 +20,11 @@
 
 import Header from '../../experience-fragments/Header/Header.vue'
 import Title from '@/components/micro/Title/Title.vue'
+import Button from '../../micro/Button/Button.vue'
 
 export default {
   name: "formOne",
-  components: { Header, Title }
+  components: { Header, Title, Button }
 }
 </script>
 
