@@ -4,9 +4,7 @@
     <div id="formOne">
       <div class="sectionForm">
         <div class="divTitle">
-          <div class="teste">
             <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault"/>
-          </div>
         </div>
       </div>
     </div>
