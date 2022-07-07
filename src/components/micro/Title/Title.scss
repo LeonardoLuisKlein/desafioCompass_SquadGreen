@@ -1,10 +1,13 @@
-div{
-    font-family: 'Inter';
-    font-style: normal;
+* {
+    padding: 0;
+    margin: 0;
+}
 
-    .blueTitle{
-        color: #074EE8;
-        font-weight: 700;
-        font-size: 40px;
-    }
+.blueTitle{
+    color: #074EE8;
+    font-size: 2em;
+}
+.smallTitle {
+    color: #111111;
+    font-size: 0.5em;
 }
