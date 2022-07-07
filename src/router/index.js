@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import FormTabs from "../views/FormTabs/FormTabs.vue"
+import FormOne from "@/components/containers/FormOne/FormOne.vue"
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'FormTabs',
-    component: FormTabs
+    name: 'formOne',
+    component: FormOne
   },
  
 ]
