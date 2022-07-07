@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Label text="Oi" className="defaultLabel"/>
+    <Label text="Full Name" className="defaultLabel"/>
   </div>
 </template>
 
