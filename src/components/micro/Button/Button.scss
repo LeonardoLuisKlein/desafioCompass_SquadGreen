@@ -5,3 +5,21 @@
     background: white;
     padding: 0em 0em 1em 0em;
 }
+
+.selected {
+    color: #074EE8;
+    border-color: #074EE8;
+    box-shadow: inset 0px -2px 0px #074EE8;
+}
+
+.next {
+    background: #074EE8;
+    border-radius: 4px;
+    color: #FFFFFF;
+    width: 83px;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+}
