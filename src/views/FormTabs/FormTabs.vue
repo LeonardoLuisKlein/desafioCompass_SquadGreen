@@ -10,7 +10,7 @@ export default {
     name: "FormTabs",
     components: {
 },  
-}
+
 </script>
 
 <style lang="scss" scoped>
