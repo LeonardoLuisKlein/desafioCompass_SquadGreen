@@ -4,8 +4,11 @@
     line-height: 1.125;
 }
 .mediumLowSize {
+    display: flex;
     font-size: 0.875em;
     line-height: 1.5;
+    margin: 0;
+    padding: 0; 
 }
 .regularSize {
     font-size: 1em;
