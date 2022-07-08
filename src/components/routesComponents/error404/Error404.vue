@@ -1,5 +1,7 @@
 <template>
-  <img src="@/assets/gif404.gif" alt="Erro 404" class="errorgif">
+    <div class="errorPage">
+        <img src="@/assets/error404.gif" alt="Erro 404" class="errorGif">
+    </div>
 </template>
 
 <script>
@@ -10,5 +12,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import './Error404.scss';
 </style>
