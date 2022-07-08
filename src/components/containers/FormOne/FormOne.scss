@@ -38,6 +38,12 @@
             flex-flow:column wrap;
             justify-content: space-evenly;
 
+            .separationName{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
             .emailPhoneBody {
                 display: flex;
                 justify-content: space-between;

@@ -4,48 +4,57 @@
     <div id="formOne">
       <div class="sectionForm">
         <div class="divTitle">
-            <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault"/>
+          <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault" />
         </div>
         <div class="buttonsTop">
-            <Button text="Basic" classButton="Border"/>
-            <Button text="Social" classButton="Border"/>
-            <Button text="Certificates" classButton="Border"/>
+          <Button text="Basic" classButton="Border" />
+          <Button text="Social" classButton="Border" />
+          <Button text="Certificates" classButton="Border" />
         </div>
-        <div class="divBody"> 
+        <div class="divBody">
           <div class="nameBody">
-            <Label inputLabel="name" className="defaultLabel" text="Full Name *"/>
-            <Inputs inputClass="inputBorder bigInput" id="name" placeHolder="Foo Bar"/>
+            <div class="separationName">
+              <Label inputLabel="name" className="defaultLabel" text="Full Name *" />
+              <TextComponent text="Please enter your Name" className="mediumLowSize error" />
+            </div>
+            <Inputs inputClass="inputBorder bigInput" id="name" placeHolder="Foo Bar" />
           </div>
 
           <div class="nickNameBody">
-            <Label inputLabel="nickName" className="defaultLabel" text="NickName *"/>
-            <Inputs inputClass="inputBorder bigInput" id="nickName" placeHolder="Juanito"/>
+            <Label inputLabel="nickName" className="defaultLabel" text="NickName" />
+            <Inputs inputClass="inputBorder bigInput" id="nickName" placeHolder="Juanito" />
           </div>
 
           <div class="emailPhoneBody">
             <div class="emailBody">
-              <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *"/>
-              <Inputs inputClass="inputBorder bigInput" id="email" placeHolder="foo@bar.com"/>
+              <div class="separationName">
+                <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *" />
+                <TextComponent text="Please enter your Name" className="mediumLowSize error" />
+              </div>
+              <Inputs inputClass="inputBorder bigInput" id="email" placeHolder="foo@bar.com" />
             </div>
 
             <div class="phoneBody">
-              <Label inputLabel="phone" className="defaultLabel phoneLabel" text="Phone *"/>
-              <Inputs inputClass="inputBorder bigInput" id="phone" placeHolder="(83) 00000-0000"/>
+              <Label inputLabel="phone" className="defaultLabel phoneLabel" text="Phone" />
+              <Inputs inputClass="inputBorder bigInput" id="phone" placeHolder="(83) 00000-0000" />
             </div>
           </div>
 
           <div class="datesBody">
             <div class="datesBodyHeader">
-              <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday *"/>
+              <div class="separationName">
+              <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday *" />
+              <TextComponent text="Please enter your Name" className="mediumLowSize error" />
+              </div>
             </div>
 
             <div class="datesDay">
-              <Label inputLabel="day" className="defaultLabel dateLabel" text="Day"/>
+              <Label inputLabel="day" className="defaultLabel dateLabel" text="Day" />
             </div>
 
           </div>
-            
-          
+
+
 
 
         </div>
@@ -61,10 +70,11 @@ import Title from '@/components/micro/Title/Title.vue'
 import Button from '../../micro/Button/Button.vue'
 import Label from '@/components/micro/Label/Label.vue'
 import Inputs from '@/components/micro/Inputs/Inputs.vue'
+import TextComponent from '@/components/micro/Text/Text.vue'
 
 export default {
   name: "formOne",
-  components: { Header, Title, Button, Label, Inputs }
+  components: { Header, Title, Button, Label, Inputs, TextComponent }
 }
 </script>
 
