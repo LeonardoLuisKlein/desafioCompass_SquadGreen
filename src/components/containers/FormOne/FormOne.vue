@@ -7,7 +7,7 @@
             <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault"/>
         </div>
         <div class="buttonsTop">
-            <Button text="Basic" classButton="Border"/>
+            <Button text="Basic" classButton="Border selected"/>
             <Button text="Social" classButton="Border"/>
             <Button text="Certificates" classButton="Border"/>
         </div>
