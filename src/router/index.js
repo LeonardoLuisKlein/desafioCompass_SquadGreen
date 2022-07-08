@@ -22,7 +22,7 @@ const routes = [
     path: '/formThird',
     name: 'FormThird',
     component: FormThird
-  }
+  },
   {
     path: "*",
     name: "Error 404",
