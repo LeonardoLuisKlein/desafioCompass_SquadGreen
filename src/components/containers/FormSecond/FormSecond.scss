@@ -1,0 +1,51 @@
+.header{
+    background: #ECEEF2;
+}
+#FormSecond {
+    height: 84.7vh;
+    background: #ECEEF2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .sectionForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 78vh;
+        width: 40vw;
+        border-radius: 20px;
+        background: #FFFFFF;
+        .divTitle{
+            display: flex;
+            height: 20%;
+            width: 80%;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .buttonsTop {
+            display: flex;
+            width: 80%;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .divBody {
+            display: flex;
+            width: 80%;
+            height: 34%;
+            flex-flow:column wrap;
+            justify-content: space-evenly;
+        }
+
+        .divFooter {
+            display: flex;
+            width: 80%;
+            height: 35%;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+    }
+    
+}
