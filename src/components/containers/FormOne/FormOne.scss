@@ -30,6 +30,36 @@
             align-items: center;
             justify-content: space-around;
         }
+
+        .divBody {
+            display: flex;
+            width: 80%;
+            height: 60%;
+            flex-flow:column wrap;
+            justify-content: space-evenly;
+
+            .emailPhoneBody {
+                display: flex;
+                justify-content: space-between;
+
+                .emailBody {
+                    width: 60%;
+                }
+
+                .phoneBody {
+                    width: 35%;
+                }
+            }
+            
+            .datesBody {
+                display: flex;
+                flex-flow: column;
+
+                .datesBodyHeader {
+                    height: 100% + 20%;
+                }
+            }
+        }
     }
     
 }
