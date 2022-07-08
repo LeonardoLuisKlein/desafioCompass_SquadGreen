@@ -16,15 +16,18 @@ div{
     /* Inputs sizes */
     .smallInput{
         height: 2.5em;
-        width: 40%;      
+        width: 40%;  
+        box-sizing: border-box;    
     }
     .mediumInput{
         height: 2.5em;
         width: 60%;
+        box-sizing: border-box;
     }
     .bigInput{
         height: 2.5em;
-        width: 80%;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
