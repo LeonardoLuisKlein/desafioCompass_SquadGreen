@@ -2,7 +2,7 @@
     background: #ECEEF2;
 }
 #formOne {
-    height: 84.7vh;
+    height: 86.7vh;
     background: #ECEEF2;
     display: flex;
     justify-content: center;
@@ -12,13 +12,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 78vh;
+        height: 83vh;
         width: 40vw;
         border-radius: 20px;
         background: #FFFFFF;
         .divTitle{
             display: flex;
-            height: 20%;
+            height: 15%;
             width: 80%;
             align-items: center;
             justify-content: flex-start;
@@ -34,7 +34,7 @@
         .divBody {
             display: flex;
             width: 80%;
-            height: 60%;
+            height: 50%;
             flex-flow:column wrap;
             justify-content: space-evenly;
 
