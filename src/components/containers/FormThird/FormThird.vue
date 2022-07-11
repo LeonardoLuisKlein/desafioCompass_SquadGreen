@@ -18,7 +18,10 @@
             <Label inputLabel="linkedin" className="defaultLabel" text="Certificates"/>
             <Inputs inputClass="inputBorder bigInput" id="linkedin" placeHolder="https://www.linkedin.com/in/foo-bar-3a0560104/"/>
             <div class="divCertificateButtons">
-                <Button text="Certificates V" classButton="certificates"/>
+                <!-- <select text="Certificates" classButton="certificates"/> -->
+                <select name="certificates" class="certificates">
+                    <option value="" disabled selected>   Certificates</option>
+                </select>
                 <Button text="+ More >" classButton="more"/>
             </div>
           </div>
