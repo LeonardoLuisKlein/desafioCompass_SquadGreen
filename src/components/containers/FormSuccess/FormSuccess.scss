@@ -1,0 +1,39 @@
+.header{
+    background: #ECEEF2;
+}
+#formSuccess {
+    height: 86.7vh;
+    background: #ECEEF2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .sectionForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 69vh;
+        width: 40vw;
+        border-radius: 20px;
+        background: #FFFFFF;
+        
+        .formBody {
+            display: flex;
+            flex-direction: column;
+            height: 80%;
+            width: 85%;
+        }
+
+        .formButton {
+            display: flex;
+            width: 85%;
+            justify-content: flex-end;
+        }
+        
+    }
+
+
+    
+    
+}
