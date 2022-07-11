@@ -20,6 +20,7 @@
 
           <div class="githubBody">
             <Label inputLabel="github" className="defaultLabel" text="Github *"/>
+            <TextComponent text="Please enter your GitHub Link" className="mediumLowSize error" />
             <Inputs inputClass="inputBorder bigInput" id="gihub" placeHolder="https://github.com/foobar"/>
           </div>
         </div>
@@ -41,10 +42,11 @@ import Title from '@/components/micro/Title/Title.vue'
 import Button from '../../micro/Button/Button.vue'
 import Label from '@/components/micro/Label/Label.vue'
 import Inputs from '@/components/micro/Inputs/Inputs.vue'
+import TextComponent from '@/components/micro/Text/Text.vue'
 export default {
     name: "FormSecond",
     components: {
-        Header, Title, Button, Label, Inputs
+        Header, Title, Button, Label, Inputs, TextComponent,
     }
 }
 

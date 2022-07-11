@@ -29,7 +29,7 @@
             <div class="emailBody">
               <div class="separationName">
                 <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *" />
-                <TextComponent text="Please enter your Name" className="mediumLowSize error" />
+                <TextComponent text="Please enter your Email" className="mediumLowSize error" />
               </div>
               <Inputs inputClass="inputBorder bigInput" id="email" placeHolder="foo@bar.com" />
             </div>
@@ -44,7 +44,7 @@
             <div class="datesBodyHeader">
               <div class="separationName">
               <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday *" />
-              <TextComponent text="Please enter your Name" className="mediumLowSize error" />
+              <TextComponent text="Please enter your Age" className="mediumLowSize error" />
               </div>
             </div>
 
