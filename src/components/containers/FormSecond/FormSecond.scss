@@ -2,7 +2,7 @@
     background: #ECEEF2;
 }
 #FormSecond {
-    height: 84.7vh;
+    height: 86.7vh;
     background: #ECEEF2;
     display: flex;
     justify-content: center;
@@ -55,3 +55,15 @@
     }
     
 }
+
+@media (max-width: 768px) {
+    
+    #FormSecond {
+        .sectionForm{
+            height: 100%;
+            width: 100%; 
+            border-radius: 0px;
+        }
+    }
+  }
+  

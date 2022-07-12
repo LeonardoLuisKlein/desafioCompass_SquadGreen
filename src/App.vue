@@ -15,5 +15,7 @@
   user-select: none;
 }
 
-
+button {
+  cursor: pointer;
+}
 </style>
