@@ -22,14 +22,14 @@
           <div class="githubBody">
             <div class="separationName">
             <Label inputLabel="github" className="defaultLabel" text="Github *" />
-            <TextComponent text="Please enter your GitHub Link" className="mediumLowSize error" />
+            <TextComponent text="Please enter your GitHub Link" className="mediumLowSize error" id="errorGit"/>
           </div>
-          <Inputs inputClass="inputBorder bigInput" id="gihub" placeHolder="https://github.com/foobar" />
+          <Inputs inputClass="inputBorder bigInput" id="github" placeHolder="https://github.com/foobar" type="text" />
         </div>
       </div>
 
       <div class="divFooter">
-        <Button text="Next >" classButton="next" />
+        <Button text="Next >" classButton="next" :clickButton="secondFormRegister" />
       </div>
 
     </div>
@@ -46,11 +46,21 @@ import Button from '../../micro/Button/Button.vue'
 import Label from '@/components/micro/Label/Label.vue'
 import Inputs from '@/components/micro/Inputs/Inputs.vue'
 import TextComponent from '@/components/micro/Text/Text.vue'
+
 export default {
   name: "FormSecond",
   components: {
     Header, Title, Button, Label, Inputs, TextComponent,
-  }
+  },
+        methods: {
+        secondFormRegister (){
+            if (this.$store.state.control == true) {
+              this.$router.push('/formThird')
+        } else{
+          document.getElementById('errorGit').style.display = 'block';
+        }
+    }
+}
 }
 
 </script>
