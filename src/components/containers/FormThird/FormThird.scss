@@ -55,8 +55,8 @@
                 text-align: end;
                 display: none;
             }
-
-            #smallError{
+            
+            #errorCertificate, #errorTeam, #errorInstitution, #errorGraduation {
                 display: none;
             }
 
@@ -76,8 +76,10 @@
                 }
             }
 
-            .certificates {
-                display: flex;
+            
+
+            #certificatesSelect {
+                display: none;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
@@ -92,7 +94,31 @@
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 18px;
+                transition: color 0s 2147483647s;
+                outline: none;
+                select {
+                    display: none;
+                    option {
+                        font-size: 11px;
+                        background: rgba(67, 78, 104, 0.8);
+                    }
+                }
+                
             }
+            
+
+            select:focus,
+            select:active,
+            select:focus{
+                transition:0s;
+                background: red;
+                
+            }
+
+
+            
+            
+            
         }
 
         .divFooter {

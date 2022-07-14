@@ -54,7 +54,7 @@ export default {
   },
         methods: {
         secondFormRegister (){
-            if (this.$store.state.control == true) {
+            if (this.$store.state.controlGitHub == true) {
               this.$router.push('/formThird')
         } else{
           document.getElementById('errorGit').style.display = 'block';
