@@ -1,10 +1,6 @@
 <template>
   <div>
-    <input 
-    :type="type"
-    :class="inputClass"
-    :placeholder="placeHolder"
-    />
+    <input :type="type"  :class="inputClass" :placeholder="placeHolder" />
   </div>
 </template>
 
@@ -12,14 +8,15 @@
 export default {
   // eslint-disable-next-line
   name: "Inputs",
-  props:{
+  props: {
     type: String,
     inputClass: String,
     placeHolder: String,
   },
 }
+
 </script>
 
 <style lang="scss" scoped>
-  @import "./Inputs.scss";
+@import "./Inputs.scss";
 </style>

@@ -5,41 +5,48 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    day: "",
-    month: "",
-    year: "",
-    age: "",
+    day: 0,
+    month: 0,
+    year: 0,
+    age: 0,
+    calc: 0,
   },
   getters: {},
   mutations: {
     setDay(state, day) {
       state.day = day;
+      console.log(day)
     },
     setMonth(state, month) {
       state.month = month;
+      console.log(month)
     },
     setYear(state, year) {
       state.year = year;
+      console.log(year)
     },
     setAge(state, age) {
       state.age = age;
-      let day = this.state.day;
-      let month = this.state.month;
-      let year = this.state.year;
-      function idade() {
-        var d = new Date(),
-          ano_atual = d.getFullYear(),
-          mes_atual = d.getMonth() + 1,
-          dia_atual = d.getDate(),
+    },
+    calc(state,calc) {
+      state.calc = calc
+      let d = new Date();
+      let ano_atual = d.getFullYear();
+      let mes_atual = d.getMonth() + 1;
+      let dia_atual = d.getDate();
+      let quantos_anos = ano_atual - this.year;
 
-          quantos_anos = ano_atual - year;
-          
-        if (mes_atual < month || (mes_atual == month && dia_atual < day)) {
-          quantos_anos--;
-        }
-        return quantos_anos < 0 ? 0 : quantos_anos;
+      if (
+        mes_atual < this.month ||
+        (mes_atual == this.month && dia_atual < this.day)
+      ) {
+        quantos_anos--;
       }
-      state.age = idade()
+      
+      quantos_anos < 0 ? 0 : quantos_anos;
+      quantos_anos = this.calc
+      console.log(this.state.month)
+      return this.calc = this.age
     },
   },
   actions: {
@@ -55,6 +62,9 @@ export default new Vuex.Store({
     setAge({ commit }, age) {
       commit("setAge", age);
     },
+    calc ({ commit }, calc) {
+      commit("calc", calc);
+    }
   },
   modules: {},
 });

@@ -146,10 +146,10 @@ export default {
     },
     components: { Label },
     methods: {
-        ...mapActions(["setYear","setAge"]),
+        ...mapActions(["setYear"]),
         valueYear(e) {
             this.setYear(e.target.value)
-            this.setAge(e.target.value)
+            console.log(this.$store.state.year)
         },
     },
 }
