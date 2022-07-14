@@ -6,7 +6,16 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     github: "",
-    control: "",
+    controlGitHub: "",
+    controlCertificates: "",
+    controlTeam: "",
+    controlInstitution: "",
+    controlGraduation: "",
+    certificate: "",
+    certificates: [],
+    teamName: "",
+    institution: "",
+    graduation: ""
   },
   getters: {
   },
@@ -15,17 +24,79 @@ export default new Vuex.Store({
       state.github = github;
       if(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(github)){
       localStorage.setItem("github", github);
-      this.state.control = true;
+      this.state.controlGitHub = true;
       } else{
         localStorage.setItem("github", "");
-        this.state.control = false;
+        this.state.controlGitHub = false;
       }
     },
+    setCertificate(state, certificate) {
+      state.certificate = certificate
+      if(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(certificate)) {
+        this.state.controlCertificates = true;
+      } else {
+        localStorage.setItem("certificates", "");
+        this.state.controlCertificates = false;
+      }
+    },
+
+    setCertificates(state, certificates) {
+      state.certificates.push(certificates)
+      localStorage.setItem("certificates", certificates);
+    },
+    setTeamName(state, teamName) {
+      state.teamName = teamName;
+      if(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(teamName)) {
+        localStorage.setItem("teamName", teamName);
+        this.state.controlTeam = true;
+      } else {
+        localStorage.setItem("teamName", "");
+        this.state.controlTeam = false;
+      }
+    },
+    setInstitution(state, institution) {
+      state.institution = institution;
+      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(institution)) {
+        localStorage.setItem("institution", institution);
+        this.state.controlInstitution = true;
+      } else {
+        localStorage.setItem("institution", "");
+        this.state.controlInstitution = false;
+      }
+    },
+    setGraduation(state, graduation) {
+      state.graduation = graduation;
+      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(graduation)) {
+        localStorage.setItem("graduation", graduation);
+        this.state.controlGraduation = true;
+      } else {
+        localStorage.setItem("graduation", "");
+        this.state.controlGraduation = false;
+      }
+    },
+
   },
   actions: {
     setGitHub({ commit }, github) {
       commit("setGitHub", github);
     },
+    setCertificate({ commit }, certificate) {
+      commit("setCertificate", certificate)
+    },
+    setCertificates({ commit }, certificate) {
+      commit("setCertificates", certificate)
+    },
+
+    setTeamName({ commit }, teamName) {
+      commit("setTeamName", teamName);
+    },
+    setInstitution({ commit }, institution) {
+      commit("setInstitution", institution);
+    },
+    setGraduation({ commit }, graduation) {
+      commit("setGraduation", graduation)
+    }
+
   },
   modules: {
   }
