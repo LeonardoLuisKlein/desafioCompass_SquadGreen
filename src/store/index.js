@@ -15,7 +15,10 @@ export default new Vuex.Store({
     certificates: [],
     teamName: "",
     institution: "",
-    graduation: ""
+    graduation: "",
+    fullname: "",
+    email: "",
+
   },
   getters: {
   },
@@ -74,6 +77,26 @@ export default new Vuex.Store({
         this.state.controlGraduation = false;
       }
     },
+    setFullname(state, fullname) {
+      state.fullname = fullname;
+      if(/(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/.test(fullname)){
+      localStorage.setItem("fullname", fullname);
+      this.state.control = true;
+      } else{
+        localStorage.setItem("fullname", "");
+        this.state.control = false;
+      }
+    },
+    setEmail(state, email) {
+      state.email = email;
+      if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)){
+      localStorage.setItem("email", email);
+      this.state.control = true;
+      } else{
+        localStorage.setItem("email", "");
+        this.state.control = false;
+      }
+    },
 
   },
   actions: {
@@ -86,7 +109,6 @@ export default new Vuex.Store({
     setCertificates({ commit }, certificate) {
       commit("setCertificates", certificate)
     },
-
     setTeamName({ commit }, teamName) {
       commit("setTeamName", teamName);
     },
@@ -95,7 +117,13 @@ export default new Vuex.Store({
     },
     setGraduation({ commit }, graduation) {
       commit("setGraduation", graduation)
-    }
+    },
+    setFullname({ commit }, fullname) {
+      commit("setFullname", fullname);
+    },
+    setEmail({ commit }, email) {
+      commit("setEmail", email);
+    },
 
   },
   modules: {
