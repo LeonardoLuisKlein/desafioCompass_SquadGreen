@@ -1,0 +1,143 @@
+.header{
+    background: #ECEEF2;
+}
+#formThird {
+    height: 86.7vh;
+    background: #ECEEF2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .sectionForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 83vh;
+        width: 40vw;
+        border-radius: 20px;
+        background: #FFFFFF;
+        .divTitle{
+            display: flex;
+            height: 15%;
+            width: 80%;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .buttonsTop {
+            display: flex;
+            width: 80%;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .divBody {
+            display: flex;
+            width: 80%;
+            height: 70%;
+            flex-flow:column wrap;
+            justify-content: space-evenly;
+
+            .errorTexts{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .errorMore{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 50%;
+            }
+
+            #bigError{
+                text-align: end;
+                display: none;
+            }
+            
+            #errorCertificate, #errorTeam, #errorInstitution, #errorGraduation {
+                display: none;
+            }
+
+            .separationName{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            
+            .certificatesBody {
+                
+                .divCertificateButtons {
+                    display: flex;
+                    justify-content: space-between!important;
+                    margin: 15px 0;
+                    width: 100%;
+                }
+            }
+
+            
+
+            #certificatesSelect {
+                display: none;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 0px 12px;
+                gap: 6px;
+                background: #074EE8;
+                border-radius: 4px;
+                color: #FFFFFF;
+                width: 129px;
+                height: 40px;
+                border-radius: 4px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 18px;
+                transition: color 0s 2147483647s;
+                outline: none;
+                select {
+                    display: none;
+                    option {
+                        font-size: 11px;
+                        background: rgba(67, 78, 104, 0.8);
+                    }
+                }
+                
+            }
+            
+
+            select:focus,
+            select:active,
+            select:focus{
+                transition:0s;
+                background: red;
+                
+            }
+
+
+            
+            
+            
+        }
+
+        .divFooter {
+            display: flex;
+            width: 80%; 
+            justify-content: end;
+        }
+
+
+    }
+    
+}
+
+@media (max-width: 768px) {
+    #formThird {
+        .sectionForm {
+            height: 100%;
+            width: 100%;
+            border-radius: 0px;
+        }
+    }
+}
