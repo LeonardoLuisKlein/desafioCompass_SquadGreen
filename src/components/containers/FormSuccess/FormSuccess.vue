@@ -1,33 +1,33 @@
 <template>
     <div class="header">
-    <Header />
-    <div id="formSuccess">
-      <div class="sectionForm">
-        
+        <Header />
+        <div id="formSuccess">
+            <div class="sectionForm">
 
 
-          <div class="formBody">
-              <TextComponent text="Your data has been sent successfully!"/> 
-              <TextComponent text="Full Name:" :cText="this.fullname"/> 
-              <TextComponent text="Email: " :cText="this.email"/> 
-              <TextComponent text="Birthday: " /> 
-              <TextComponent text="Age: " :cText="this.age"/> 
-              <TextComponent text='GitHub: ' :cText="this.github"/> 
-              <TextComponent text="Certificates: "/> 
-              <TextComponent text="Team Name: " :cText="this.teamName"/> 
-              <TextComponent text="Institution: " :cText="this.institution"/> 
-              <TextComponent text="Graduation: " :cText="this.graduation"/>
 
-              
-          </div> 
-        
+                <div class="formBody">
+                    <TextComponent text="Your data has been sent successfully!" />
+                    <TextComponent text="Full Name:" :cText="this.fullname" />
+                    <TextComponent text="Email: " :cText="this.email" />
+                    <TextComponent text="Birthday: " />
+                    <TextComponent text="Age: " :cText="this.age" />
+                    <TextComponent text='GitHub: ' :cText="this.github" />
+                    <TextComponent text="Certificates: " />
+                    <TextComponent text="Team Name: " :cText="this.teamName" />
+                    <TextComponent text="Institution: " :cText="this.institution" />
+                    <TextComponent text="Graduation: " :cText="this.graduation" />
 
-          <div class="formButton">
-              <Button text="Return" classButton="next" :clickButton="clearLocalStorage"/>
-          </div>
-      </div>
+
+                </div>
+
+
+                <div class="formButton">
+                    <Button text="Return" classButton="next" :clickButton="clearLocalStorage" />
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -42,8 +42,8 @@ export default {
         TextComponent,
         Button
     },
-    data(){
-        return{
+    data() {
+        return {
             fullname: "",
             email: "",
             birthday: "",
@@ -56,8 +56,8 @@ export default {
         }
     },
 
-    methods:{
-        getLocalStorage(){
+    methods: {
+        getLocalStorage() {
             this.fullname = localStorage.getItem("fullname")
             this.email = localStorage.getItem("email")
             this.age = localStorage.getItem("age")
@@ -67,21 +67,23 @@ export default {
             this.graduation = localStorage.getItem("graduation")
         },
 
-        clearLocalStorage(){
+        clearLocalStorage() {
             localStorage.clear()
             this.$router.push('/')
         }
     },
 
-      mounted() {
-    this.getLocalStorage();
-  },
+    mounted() {
+        this.getLocalStorage();
+        if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false || this.$store.state.controlGitHub == false
+            || this.$store.state.controlInstitution == false || this.$store.state.controlGraduation == false || this.$store.state.controlTeamName == false) {
+            this.$router.push('/error401')
+        }
+    },
 }
 
 </script>
 
 <style lang="scss" scoped>
-
 @import './FormSuccess.scss'
-
 </style>

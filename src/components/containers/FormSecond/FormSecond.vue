@@ -8,9 +8,9 @@
           <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault" />
         </div>
         <div class="buttonsTop">
-          <Button text="Basic" classButton="Border" :clickButton="pushToFormOne"/>
+          <Button text="Basic" classButton="Border" :clickButton="pushToFormOne" />
           <Button text="Social" classButton="Border selected" />
-          <Button text="Certificates" classButton="Border" :clickButton="pushToFormThird"/>
+          <Button text="Certificates" classButton="Border" :clickButton="pushToFormThird" />
         </div>
         <div class="divBody">
           <div class="linkedinBody">
@@ -21,19 +21,19 @@
 
           <div class="githubBody">
             <div class="separationName">
-            <Label inputLabel="github" className="defaultLabel" text="Github *" />
-            <TextComponent text="Please enter your GitHub Link" className="mediumLowSize error" id="errorGit"/>
+              <Label inputLabel="github" className="defaultLabel" text="Github *" />
+              <TextComponent text="Please enter your GitHub Link" className="mediumLowSize error" id="errorGit" />
+            </div>
+            <Inputs inputClass="inputBorder bigInput" id="github" placeHolder="https://github.com/foobar" type="text" />
           </div>
-          <Inputs inputClass="inputBorder bigInput" id="github" placeHolder="https://github.com/foobar" type="text" />
         </div>
-      </div>
 
-      <div class="divFooter">
-        <Button text="Next >" classButton="next" :clickButton="secondFormRegister" />
-      </div>
+        <div class="divFooter">
+          <Button text="Next >" classButton="next" :clickButton="secondFormRegister" />
+        </div>
 
+      </div>
     </div>
-  </div>
   </div>
 
 </template>
@@ -52,24 +52,30 @@ export default {
   components: {
     Header, Title, Button, Label, Inputs, TextComponent,
   },
-        methods: {
-        secondFormRegister (){
-            if (this.$store.state.controlGitHub == true) {
-              this.$router.push('/formThird')
-        } else{
-          document.getElementById('errorGit').style.display = 'block';
-        }
+  methods: {
+    secondFormRegister() {
+      if (this.$store.state.controlGitHub == true) {
+        this.$router.push('/formThird')
+      } else {
+        document.getElementById('errorGit').style.display = 'block';
+      }
     },
-    pushToFormOne(){
+    pushToFormOne() {
       this.$router.push('/')
     },
 
-    pushToFormThird(){
-      if(this.$store.state.controlGitHub == true){
-      this.$router.push('/formThird')
+    pushToFormThird() {
+      if (this.$store.state.controlGitHub == true) {
+        this.$router.push('/formThird')
       }
     }
-}
+  },
+
+  mounted() {
+    if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false) {
+      this.$router.push('/error401')
+    }
+  }
 }
 
 </script>

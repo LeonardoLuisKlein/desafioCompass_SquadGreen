@@ -7,15 +7,15 @@
           <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault" />
         </div>
         <div class="buttonsTop">
-          <Button text="Basic" classButton="Border selected"/>
+          <Button text="Basic" classButton="Border selected" />
           <Button text="Social" classButton="Border" :clickButton="pushToFormSecond" />
-          <Button text="Certificates" classButton="Border" :clickButton="pushToFormThird"/>
+          <Button text="Certificates" classButton="Border" :clickButton="pushToFormThird" />
         </div>
         <div class="divBody">
           <div class="nameBody">
             <div class="separationName">
               <Label inputLabel="name" className="defaultLabel" text="Full Name *" />
-              <TextComponent text="Please enter your Name" className="mediumLowSize error" id="errorFullname"/>
+              <TextComponent text="Please enter your Name" className="mediumLowSize error" id="errorFullname" />
             </div>
             <Inputs inputClass="inputBorder bigInput" id="name" placeHolder="Foo Bar" />
           </div>
@@ -29,7 +29,7 @@
             <div class="emailBody">
               <div class="separationName">
                 <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *" />
-                <TextComponent text="Please enter your Email" className="mediumLowSize error" id="errorEmail"/>
+                <TextComponent text="Please enter your Email" className="mediumLowSize error" id="errorEmail" />
               </div>
               <Inputs inputClass="inputBorder bigInput" id="email" placeHolder="foo@bar.com" />
             </div>
@@ -74,28 +74,28 @@ export default {
   methods: {
     formOne() {
       let isOK = true
-        if (this.$store.state.controlFullname == true) {
-          this.isOk = true;
-        } else{
-          document.getElementById('errorFullname').style.display = 'block';
-          this.isOk = false;
-        }
-        if (this.$store.state.controlEmail == true) {
-              this.isOk = true;
-        } else{
-          document.getElementById('errorEmail').style.display = 'block';
-          this.isOk = false;
-        }
-    
+      if (this.$store.state.controlFullname == true) {
+        this.isOk = true;
+      } else {
+        document.getElementById('errorFullname').style.display = 'block';
+        this.isOk = false;
+      }
+      if (this.$store.state.controlEmail == true) {
+        this.isOk = true;
+      } else {
+        document.getElementById('errorEmail').style.display = 'block';
+        this.isOk = false;
+      }
+
       if (isOK) {
         this.$router.push('/formSecond')
       }
     },
 
-        pushToFormSecond(){
-        if(this.$store.state.controlFullname == true || this.$store.state.controlEmail == true){
-          this.$router.push('/formSecond')
-        }
+    pushToFormSecond() {
+      if (this.$store.state.controlFullname == true || this.$store.state.controlEmail == true) {
+        this.$router.push('/formSecond')
+      }
     },
   }
 }
