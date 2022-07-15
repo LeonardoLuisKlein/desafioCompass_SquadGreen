@@ -38,7 +38,7 @@ export default {
           this.setCertificate(e.target.value);
           console.log(e.target.value)
           break;
-        case "fullname":
+        case "name":
           this.setFullname(e.target.value);
           break;
         case "email":
