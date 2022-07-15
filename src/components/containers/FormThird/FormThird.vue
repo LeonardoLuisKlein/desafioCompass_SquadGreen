@@ -8,8 +8,8 @@
           <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault" />
         </div>
         <div class="buttonsTop">
-          <Button text="Basic" classButton="Border" />
-          <Button text="Social" classButton="Border" />
+          <Button text="Basic" classButton="Border" :clickButton="pushToFormOne" />
+          <Button text="Social" classButton="Border" :clickButton="pushToFormSecond"/>
           <Button text="Certificates" classButton="Border selected" />
         </div>
 
@@ -101,9 +101,7 @@ export default {
     test() {
       console.log("OPTION ELEMENT REMOVED")
     },
-
     
-
       formThirdValidate(){ 
         let isOK = true
         console.log('controlTeam =', this.$store.state.controlTeam)
@@ -156,16 +154,10 @@ export default {
       if(this.certificateAmmount > 0) {
         document.getElementById('certificatesSelect').style.display = 'flex'
       }
-      
-      
-
-
     },
 
     addCertificate() {
       console.log('controlCertificates =', this.$store.state.controlCertificates)
-      
-
       if(this.$store.state.controlCertificates == false) {
             console.log("aaa")
             document.getElementById('errorCertificate').style.display = 'flex';
@@ -175,6 +167,14 @@ export default {
             this.checkCertificate();
           }
     },
+
+        pushToFormOne(){
+      this.$router.push('/')
+    },
+
+        pushToFormSecond(){
+      this.$router.push('/FormSecond')
+    }
 
   } 
 }
