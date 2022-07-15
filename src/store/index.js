@@ -15,7 +15,12 @@ export default new Vuex.Store({
     certificates: [],
     teamName: "",
     institution: "",
-    graduation: ""
+    graduation: "",
+    fullname: "",
+    email: "",
+    controlFullname: "",
+    controlEmail: "",
+
   },
   getters: {
   },
@@ -39,7 +44,6 @@ export default new Vuex.Store({
         this.state.controlCertificates = false;
       }
     },
-
     setCertificates(state, certificates) {
       state.certificates.push(certificates)
       localStorage.setItem("certificates", certificates);
@@ -74,6 +78,26 @@ export default new Vuex.Store({
         this.state.controlGraduation = false;
       }
     },
+    setFullname(state, fullname) {
+      state.fullname = fullname;
+      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(fullname)) {
+        localStorage.setItem("fullname", fullname);
+        this.state.controlFullname = true;
+      } else {
+        localStorage.setItem("fullname", "");
+        this.state.controlFullname = false;
+      }
+    },
+    setEmail(state, email) {
+      state.email = email;
+      if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)){
+      localStorage.setItem("email", email);
+      this.state.controlEmail = true;
+      } else{
+        localStorage.setItem("email", "");
+        this.state.controlEmail = false;
+      }
+    },
 
   },
   actions: {
@@ -86,7 +110,6 @@ export default new Vuex.Store({
     setCertificates({ commit }, certificate) {
       commit("setCertificates", certificate)
     },
-
     setTeamName({ commit }, teamName) {
       commit("setTeamName", teamName);
     },
@@ -95,7 +118,13 @@ export default new Vuex.Store({
     },
     setGraduation({ commit }, graduation) {
       commit("setGraduation", graduation)
-    }
+    },
+    setFullname({ commit }, fullname) {
+      commit("setFullname", fullname);
+    },
+    setEmail({ commit }, email) {
+      commit("setEmail", email);
+    },
 
   },
   modules: {

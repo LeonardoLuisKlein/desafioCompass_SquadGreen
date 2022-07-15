@@ -1,12 +1,6 @@
 <template>
   <div>
-    <input 
-    :type="type"
-    :class="inputClass"
-    :placeholder="placeHolder"
-    :id="id"
-    @input="getValue"
-    />
+    <input :type="type" :class="inputClass" :placeholder="placeHolder" :id="id" @input="getValue" />
   </div>
 </template>
 
@@ -16,18 +10,18 @@ import { mapActions } from "vuex";
 export default {
   // eslint-disable-next-line
   name: "Inputs",
-  props:{
+  props: {
     type: String,
     inputClass: String,
     placeHolder: String,
     id: String
   },
 
-   methods: {
-    ...mapActions(["setGitHub", "setTeamName", "setInstitution", "setGraduation", "setCertificate"]),
+  methods: {
+    ...mapActions(["setGitHub", "setTeamName", "setInstitution", "setGraduation", "setCertificate", "setFullname", "setEmail"]),
 
     getValue(e) {
-      switch(this.id) {
+      switch (this.id) {
         case "github":
           this.setGitHub(e.target.value);
           break;
@@ -43,6 +37,12 @@ export default {
         case "certificates":
           this.setCertificate(e.target.value);
           console.log(e.target.value)
+          break;
+        case "fullname":
+          this.setFullname(e.target.value);
+          break;
+        case "email":
+          this.setEmail(e.target.value);
           break;
 
       }
@@ -60,10 +60,10 @@ export default {
         console.log(e.target.value)
       }*/
     }
-   }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  @import "./Inputs.scss";
+@import "./Inputs.scss";
 </style>

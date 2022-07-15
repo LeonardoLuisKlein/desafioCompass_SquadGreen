@@ -7,15 +7,15 @@
           <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault" />
         </div>
         <div class="buttonsTop">
-            <Button text="Basic" classButton="Border selected"/>
-            <Button text="Social" classButton="Border"/>
-            <Button text="Certificates" classButton="Border"/>
+          <Button text="Basic" classButton="Border selected" />
+          <Button text="Social" classButton="Border" />
+          <Button text="Certificates" classButton="Border" />
         </div>
         <div class="divBody">
           <div class="nameBody">
             <div class="separationName">
               <Label inputLabel="name" className="defaultLabel" text="Full Name *" />
-              <TextComponent text="Please enter your Name" className="mediumLowSize error" />
+              <TextComponent text="Please enter your Name" className="mediumLowSize error" id="errorFullname"/>
             </div>
             <Inputs inputClass="inputBorder bigInput" id="name" placeHolder="Foo Bar" />
           </div>
@@ -29,7 +29,7 @@
             <div class="emailBody">
               <div class="separationName">
                 <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *" />
-                <TextComponent text="Please enter your Email" className="mediumLowSize error" />
+                <TextComponent text="Please enter your Email" className="mediumLowSize error" id="errorEmail"/>
               </div>
               <Inputs inputClass="inputBorder bigInput" id="email" placeHolder="foo@bar.com" />
             </div>
@@ -43,8 +43,8 @@
           <div class="datesBody">
             <div class="datesBodyHeader">
               <div class="separationName">
-              <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday *" />
-              <TextComponent text="Please enter your Age" className="mediumLowSize error" />
+                <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday *" />
+                <TextComponent text="Please enter your Age" className="mediumLowSize error" />
               </div>
             </div>
 
@@ -53,10 +53,6 @@
             </div>
 
           </div>
-
-
-
-
         </div>
       </div>
     </div>
@@ -74,7 +70,28 @@ import TextComponent from '@/components/micro/Text/Text.vue'
 
 export default {
   name: "formOne",
-  components: { Header, Title, Button, Label, Inputs, TextComponent }
+  components: { Header, Title, Button, Label, Inputs, TextComponent },
+  methods: {
+    formOne() {
+      let isOK = true
+        if (this.$store.state.controlFullname == true) {
+          this.isOk = true;
+        } else{
+          document.getElementById('errorFullname').style.display = 'block';
+          this.isOk = false;
+        }
+        if (this.$store.state.controlEmail == true) {
+              this.isOk = true;
+        } else{
+          document.getElementById('errorEmail').style.display = 'block';
+          this.isOk = false;
+        }
+    
+      if (isOK) {
+        this.$router.push('/formSecond')
+      }
+    },
+  }
 }
 </script>
 

@@ -65,6 +65,10 @@
                     height: 100% + 20%;
                 }
             }
+
+            #errorFullname, #errorEmail {
+                display: none;
+            }
         }
     }
     
