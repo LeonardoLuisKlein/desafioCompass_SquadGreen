@@ -78,14 +78,14 @@ export default new Vuex.Store({
         this.state.controlGraduation = false;
       }
     },
-    setFullname(state, fullname) {
+    setFullname(state, fullname){
       state.fullname = fullname;
-      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(fullname)) {
-        localStorage.setItem("fullname", fullname);
+      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(fullname)){
+        localStorage.setItem("fullname", fullname)
         this.state.controlFullname = true;
       } else {
         localStorage.setItem("fullname", "");
-        this.state.controlFullname = false;
+        this.state.controlFullname = true;
       }
     },
     setEmail(state, email) {

@@ -8,9 +8,9 @@
           <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault" />
         </div>
         <div class="buttonsTop">
-          <Button text="Basic" classButton="Border" />
+          <Button text="Basic" classButton="Border" :clickButton="pushToFormOne"/>
           <Button text="Social" classButton="Border selected" />
-          <Button text="Certificates" classButton="Border" />
+          <Button text="Certificates" classButton="Border" :clickButton="pushToFormThird"/>
         </div>
         <div class="divBody">
           <div class="linkedinBody">
@@ -59,6 +59,15 @@ export default {
         } else{
           document.getElementById('errorGit').style.display = 'block';
         }
+    },
+    pushToFormOne(){
+      this.$router.push('/')
+    },
+
+    pushToFormThird(){
+      if(this.$store.state.controlGitHub == true){
+      this.$router.push('/formThird')
+      }
     }
 }
 }
