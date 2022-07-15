@@ -18,6 +18,8 @@ export default new Vuex.Store({
     graduation: "",
     fullname: "",
     email: "",
+    controlFullname: "",
+    controlEmail: "",
 
   },
   getters: {
@@ -42,7 +44,6 @@ export default new Vuex.Store({
         this.state.controlCertificates = false;
       }
     },
-
     setCertificates(state, certificates) {
       state.certificates.push(certificates)
       localStorage.setItem("certificates", certificates);
@@ -79,22 +80,22 @@ export default new Vuex.Store({
     },
     setFullname(state, fullname) {
       state.fullname = fullname;
-      if(/(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/.test(fullname)){
-      localStorage.setItem("fullname", fullname);
-      this.state.control = true;
-      } else{
+      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(fullname)) {
+        localStorage.setItem("fullname", fullname);
+        this.state.controlFullname = true;
+      } else {
         localStorage.setItem("fullname", "");
-        this.state.control = false;
+        this.state.controlFullname = false;
       }
     },
     setEmail(state, email) {
       state.email = email;
       if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)){
       localStorage.setItem("email", email);
-      this.state.control = true;
+      this.state.controlEmail = true;
       } else{
         localStorage.setItem("email", "");
-        this.state.control = false;
+        this.state.controlEmail = false;
       }
     },
 
