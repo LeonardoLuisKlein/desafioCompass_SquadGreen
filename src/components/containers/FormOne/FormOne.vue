@@ -7,9 +7,9 @@
           <Title type="h1" tMessage="Team sign Up" nameClass="titleDefault" />
         </div>
         <div class="buttonsTop">
-          <Button text="Basic" classButton="Border selected" />
-          <Button text="Social" classButton="Border" />
-          <Button text="Certificates" classButton="Border" />
+          <Button text="Basic" classButton="Border selected"/>
+          <Button text="Social" classButton="Border" :clickButton="pushToFormSecond" />
+          <Button text="Certificates" classButton="Border" :clickButton="pushToFormThird"/>
         </div>
         <div class="divBody">
           <div class="nameBody">
@@ -90,6 +90,12 @@ export default {
       if (isOK) {
         this.$router.push('/formSecond')
       }
+    },
+
+        pushToFormSecond(){
+        if(this.$store.state.controlFullname == true || this.$store.state.controlEmail == true){
+          this.$router.push('/formSecond')
+        }
     },
   }
 }
