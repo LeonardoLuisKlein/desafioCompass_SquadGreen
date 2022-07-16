@@ -34,26 +34,8 @@
             </div>
           </div>
 
-          <div class="datesBody">
-            <div class="datesBodyHeader">
-              <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday *" />
-            </div>
-
-            <div class="dates">
-              <div class="days">
-                <Day />
-              </div>
-              <div class="months">
-                <Month />
-              </div>
-              <div class="years">
-                <Year />
-              </div>
-              <div class="ages">
-                <Age />
-              </div>
-            </div>
-          </div>
+          <Birthday />
+          
         </div>
       </div>
     </div>
@@ -67,14 +49,12 @@ import Title from '@/components/micro/Title/Title.vue'
 import Button from '../../micro/Button/Button.vue'
 import Label from '@/components/micro/Label/Label.vue'
 import Inputs from '@/components/micro/Inputs/Inputs.vue'
-import Day from '@/components/micro/Birthday/day/day.vue'
-import Month from '@/components/micro/Birthday/month/month.vue'
-import Year from '@/components/micro/Birthday/year/year.vue'
-import Age from '@/components/micro/Birthday/age/age.vue'
+import Birthday from '@/components/micro/Birthday/birthday.vue'
+
 
 export default {
   name: "formOne",
-  components: { Header, Title, Button, Label, Inputs, Day, Month, Year, Age }
+  components: { Header, Title, Button, Label, Inputs, Birthday }
 }
 </script>
 

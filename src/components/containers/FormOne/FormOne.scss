@@ -50,32 +50,6 @@
                     width: 35%;
                 }
             }
-            
-            .datesBody {
-                display: flex;
-                flex-flow: column;
-
-                .datesBodyHeader {
-                    height: 100% + 20%;
-                }
-                .dates {
-                    display: flex;
-                    justify-content: space-between;
-                    .days {
-                        width: 20%;
-                    }
-                    .months {
-                        width: 20%;
-                    }
-                    .years {
-                        width: 20%;
-                    }
-                    .ages {
-                        width: 20%;
-                    }
-        
-                }
-            }
         }
     }
     
