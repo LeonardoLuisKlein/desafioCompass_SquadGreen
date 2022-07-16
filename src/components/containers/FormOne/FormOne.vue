@@ -43,8 +43,8 @@
 
           <Birthday />
           <div class="separationName">
-            <Checkbox text="I accept the terms and privacy" />
-            <TextComponent text="Please accpet the terms" className="mediumLowSize error" id="errorTerms" />
+            <Checkbox text="I accept the terms and privacy"/>
+            <TextComponent text="Please accpet the terms" className="mediumLowSize error" id="errorTerms"/>
 
           </div>
           <div class="divFooter">
@@ -74,6 +74,7 @@ export default {
   methods: {
     formOneValidate() {
       let isOK = true
+
       if (this.$store.state.controlFullname == false) {
         document.getElementById('errorFullname').style.visibility = "visible";
         isOK = false
@@ -81,6 +82,7 @@ export default {
       else {
         document.getElementById('errorFullname').style.visibility = "hidden";
       }
+
       if (this.$store.state.controlEmail == false) {
         document.getElementById('errorEmail').style.visibility = "visible";
         isOK = false
@@ -88,9 +90,30 @@ export default {
       else {
         document.getElementById('errorEmail').style.visibility = "hidden";
       }
+
+      let age = localStorage.getItem("age")
+      console.log(age)
+      if (age == null) {
+        document.getElementById('errorBirthday').style.visibility = "visible";
+        isOK = false
+      }
+      else {
+        document.getElementById('errorBirthday').style.visibility = "hidden";
+      }
+      
+      if (!document.getElementById('checkbox').checked) {
+        document.getElementById('errorTerms').style.visibility = "visible";
+        isOK = false
+      }
+      else {
+        document.getElementById('errorTerms').style.visibility = "hidden";
+      }
+
+
       if (isOK) {
         this.$router.push('/formSecond')
       }
+      
     },
 
     pushToFormSecond() {

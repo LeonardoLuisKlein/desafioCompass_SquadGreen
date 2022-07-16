@@ -18,7 +18,7 @@ export default new Vuex.Store({
     graduation: "",
     name: "",
     email: "",
-    checkbox: "",
+    //age: "",
     controlFullname: "",
     controlEmail: "",
     controlAge: "",
@@ -102,14 +102,16 @@ export default new Vuex.Store({
         this.state.controlEmail = false;
       }
     },
-    setCheckbox(state, checkbox) {
-      state.checkbox = checkbox
-      if (checkbox.checked) {
-        this.state.controlCheckbox = true
+    /*setAge(state, age) {
+      state.age = age
+      if (age < 121) {
+        localStorage.setItem("age", age)
+        this.state.controlAge = true
       } else {
-        this.state.controlCheckbox = true
+        localStorage.setItem("age", "")
+        this.state.controlAge = true
       }
-    }
+    },*/
   },
 
   actions: {
@@ -137,8 +139,8 @@ export default new Vuex.Store({
     setEmail({ commit }, email) {
       commit("setEmail", email);
     },
-    setCheckbox({ commit }, checkbox) {
-      commit("setCheckbox", checkbox);
+    setAge({ commit }, age) {
+      commit("setAge", age)
     },
   },
   modules: {},

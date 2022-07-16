@@ -16,7 +16,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["setGitHub", "setTeamName", "setInstitution", "setGraduation", "setCertificate", "setFullname", "setEmail"]),
+    ...mapActions(["setGitHub", "setTeamName", "setInstitution", "setGraduation", "setCertificate", "setFullname", "setEmail", "setCheckbox"]),
 
     getValue(e) {
       switch (this.id) {
@@ -41,6 +41,9 @@ export default {
           break;
         case "email":
           this.setEmail(e.target.value);
+          break;
+        case "checkbox":
+          this.setCheckbox(e.target.value);
           break;
 
       }
