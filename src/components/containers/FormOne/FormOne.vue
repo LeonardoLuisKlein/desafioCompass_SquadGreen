@@ -8,28 +8,36 @@
         </div>
         <div class="buttonsTop">
           <Button text="Basic" classButton="Border selected" />
-          <Button text="Social" classButton="Border" />
-          <Button text="Certificates" classButton="Border" />
+          <Button text="Social" classButton="Border" :clickButton="pushToFormSecond" />
+          <Button text="Certificates" classButton="Border" :clickButton="pushToFormThird" />
         </div>
         <div class="divBody">
           <div class="nameBody">
-            <Label inputLabel="name" className="defaultLabel" text="Full Name *" />
+            <div class="separationName">
+              <Label inputLabel="name" className="defaultLabel" text="Full Name *" />
+              <TextComponent text="Please enter your Name" className="mediumLowSize error" id="errorFullname" />
+            </div>
             <Inputs inputClass="inputBorder bigInput" id="name" placeHolder="Foo Bar" />
           </div>
 
           <div class="nickNameBody">
-            <Label inputLabel="nickName" className="defaultLabel" text="NickName *" />
+            <Label inputLabel="nickName" className="defaultLabel" text="NickName" />
             <Inputs inputClass="inputBorder bigInput" id="nickName" placeHolder="Juanito" />
           </div>
 
           <div class="emailPhoneBody">
             <div class="emailBody">
-              <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *" />
+            
+              <div class="separationName">
+                <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *" />
+                <TextComponent text="Please enter your Email" className="mediumLowSize error" id="errorEmail" />
+              </div>
+
               <Inputs inputClass="inputBorder bigInput" id="email" placeHolder="foo@bar.com" />
             </div>
 
             <div class="phoneBody">
-              <Label inputLabel="phone" className="defaultLabel phoneLabel" text="Phone *" />
+              <Label inputLabel="phone" className="defaultLabel phoneLabel" text="Phone" />
               <Inputs inputClass="inputBorder bigInput" id="phone" placeHolder="(83) 00000-0000" />
             </div>
           </div>
@@ -50,11 +58,38 @@ import Button from '../../micro/Button/Button.vue'
 import Label from '@/components/micro/Label/Label.vue'
 import Inputs from '@/components/micro/Inputs/Inputs.vue'
 import Birthday from '@/components/micro/Birthday/birthday.vue'
-
+import TextComponent from '@/components/micro/Text/Text.vue'
 
 export default {
   name: "formOne",
-  components: { Header, Title, Button, Label, Inputs, Birthday }
+  components: { Header, Title, Button, Label, Inputs, TextComponent, Birthday },
+  methods: {
+    formOne() {
+      let isOK = true
+      if (this.$store.state.controlFullname == true) {
+        this.isOk = true;
+      } else {
+        document.getElementById('errorFullname').style.display = 'block';
+        this.isOk = false;
+      }
+      if (this.$store.state.controlEmail == true) {
+        this.isOk = true;
+      } else {
+        document.getElementById('errorEmail').style.display = 'block';
+        this.isOk = false;
+      }
+
+      if (isOK) {
+        this.$router.push('/formSecond')
+      }
+    },
+
+    pushToFormSecond() {
+      if (this.$store.state.controlFullname == true || this.$store.state.controlEmail == true) {
+        this.$router.push('/formSecond')
+      }
+    },
+  }
 }
 </script>
 

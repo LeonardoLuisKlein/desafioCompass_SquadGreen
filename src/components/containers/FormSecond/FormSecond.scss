@@ -2,7 +2,7 @@
     background: #ECEEF2;
 }
 #FormSecond {
-    height: 84.7vh;
+    height: 86.7vh;
     background: #ECEEF2;
     display: flex;
     justify-content: center;
@@ -37,6 +37,12 @@
             height: 34%;
             flex-flow:column wrap;
             justify-content: space-evenly;
+
+            .separationName{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
         }
 
         .divFooter {
@@ -46,6 +52,22 @@
             justify-content: flex-end;
             align-items: flex-end;
         }
+
+        #errorGit{
+            display: none;
+        }
     }
     
 }
+
+@media (max-width: 768px) {
+    
+    #FormSecond {
+        .sectionForm{
+            height: 100%;
+            width: 100%; 
+            border-radius: 0px;
+        }
+    }
+  }
+  

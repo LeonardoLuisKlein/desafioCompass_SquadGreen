@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p :class="className" :placeholder="place">{{ text }}</p>
+    <p :class="className" :placeholder="place">{{ text }} {{ cText }}</p>
   </div>
 </template>
 
@@ -16,6 +16,10 @@ export default {
             type: String
         },
         place: {
+          type: String,
+          default: ""
+        },
+        cText:{
           type: String,
           default: ""
         }
