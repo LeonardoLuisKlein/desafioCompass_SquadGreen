@@ -1,7 +1,5 @@
 <template>
-  <div>
     <input :type="type" :class="inputClass" :placeholder="placeHolder" :id="id" @input="getValue" />
-  </div>
 </template>
 
 <script>
@@ -62,6 +60,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

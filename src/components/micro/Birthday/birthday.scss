@@ -1,0 +1,64 @@
+.labelBirthday {
+    display: flex;
+    align-items: center;
+    #errorBirthday {
+        margin: 0.2em 0 0 1em;
+    }
+}
+.datesBody {
+    display: flex;
+    justify-content: space-between;
+}
+.daySelect, .monthSelect, .yearSelect, .Age {
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+   
+}
+.day, .month, .year {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #AAAAAA;
+    transition: color 0s 2147483647s;
+    outline: none;
+    #optionDay,#optionMonth,#optionYear {
+        color: black;
+    }
+}
+select:focus,
+select:active,
+select:focus{
+    color: black;
+    transition:0s;
+}
+
+
+.age {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    height: 3.7vh;
+    border: 2px solid #aaaaaa;
+    border-radius: 4px;
+    color: #aaaaaa;
+    #ageId{
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    color: #000000;
+    font-size: 1em;
+    margin: 2px 0px 0px 5px;
+    
+   }
+}
+[contentEditable=false]:empty:not(:focus):before{
+    color: #aaaaaa;
+    content:attr(data-ph)
+}

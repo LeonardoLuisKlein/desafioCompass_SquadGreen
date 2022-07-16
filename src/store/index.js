@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -20,10 +20,11 @@ export default new Vuex.Store({
     email: "",
     controlFullname: "",
     controlEmail: "",
-
   },
   getters: {
+
   },
+
   mutations: {
     setGitHub(state, github) {
       state.github = github;
@@ -98,8 +99,8 @@ export default new Vuex.Store({
         this.state.controlEmail = false;
       }
     },
-
   },
+
   actions: {
     setGitHub({ commit }, github) {
       commit("setGitHub", github);
@@ -125,8 +126,6 @@ export default new Vuex.Store({
     setEmail({ commit }, email) {
       commit("setEmail", email);
     },
-
   },
-  modules: {
-  }
-})
+  modules: {},
+});

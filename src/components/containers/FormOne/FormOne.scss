@@ -56,19 +56,10 @@
                     width: 35%;
                 }
             }
-            
-            .datesBody {
-                display: flex;
-                flex-flow: column;
-
-                .datesBodyHeader {
-                    height: 100% + 20%;
-                }
-            }
-
             #errorFullname, #errorEmail {
                 display: none;
             }
+
         }
     }
     

@@ -27,10 +27,12 @@
 
           <div class="emailPhoneBody">
             <div class="emailBody">
+            
               <div class="separationName">
                 <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *" />
                 <TextComponent text="Please enter your Email" className="mediumLowSize error" id="errorEmail" />
               </div>
+
               <Inputs inputClass="inputBorder bigInput" id="email" placeHolder="foo@bar.com" />
             </div>
 
@@ -40,19 +42,8 @@
             </div>
           </div>
 
-          <div class="datesBody">
-            <div class="datesBodyHeader">
-              <div class="separationName">
-                <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday *" />
-                <TextComponent text="Please enter your Age" className="mediumLowSize error" />
-              </div>
-            </div>
-
-            <div class="datesDay">
-              <Label inputLabel="day" className="defaultLabel dateLabel" text="Day" />
-            </div>
-
-          </div>
+          <Birthday />
+          
         </div>
       </div>
     </div>
@@ -66,11 +57,12 @@ import Title from '@/components/micro/Title/Title.vue'
 import Button from '../../micro/Button/Button.vue'
 import Label from '@/components/micro/Label/Label.vue'
 import Inputs from '@/components/micro/Inputs/Inputs.vue'
+import Birthday from '@/components/micro/Birthday/birthday.vue'
 import TextComponent from '@/components/micro/Text/Text.vue'
 
 export default {
   name: "formOne",
-  components: { Header, Title, Button, Label, Inputs, TextComponent },
+  components: { Header, Title, Button, Label, Inputs, TextComponent, Birthday },
   methods: {
     formOne() {
       let isOK = true
