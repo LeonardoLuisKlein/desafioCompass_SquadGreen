@@ -14,7 +14,7 @@
         <div class="divBody">
           <div class="nameBody">
             <div class="separationName">
-              <Label inputLabel="name" className="defaultLabel" text="Full Name *" />
+              <Label inputLabel="name" className="defaultLabel" text="Full Name*" />
               <TextComponent text="Please enter your Name" className="mediumLowSize error" id="errorFullname" />
             </div>
             <Inputs inputClass="inputBorder bigInput" id="name" placeHolder="Foo Bar" />
@@ -27,12 +27,11 @@
 
           <div class="emailPhoneBody">
             <div class="emailBody">
-            
+
               <div class="separationName">
-                <Label inputLabel="email" className="defaultLabel emailLabel" text="Email *" />
+                <Label inputLabel="email" className="defaultLabel emailLabel" text="Email*" />
                 <TextComponent text="Please enter your Email" className="mediumLowSize error" id="errorEmail" />
               </div>
-
               <Inputs inputClass="inputBorder bigInput" id="email" placeHolder="foo@bar.com" />
             </div>
 
@@ -43,7 +42,15 @@
           </div>
 
           <Birthday />
-          
+          <div class="separationName">
+            <Checkbox text="I accept the terms and privacy" />
+            <TextComponent text="Please accpet the terms" className="mediumLowSize error" id="errorTerms" />
+
+          </div>
+          <div class="divFooter">
+            <Button text="Next >" classButton="next" :clickButton="formOneValidate" />
+          </div>
+
         </div>
       </div>
     </div>
@@ -59,26 +66,28 @@ import Label from '@/components/micro/Label/Label.vue'
 import Inputs from '@/components/micro/Inputs/Inputs.vue'
 import Birthday from '@/components/micro/Birthday/birthday.vue'
 import TextComponent from '@/components/micro/Text/Text.vue'
+import Checkbox from '@/components/micro/Checkbox/Checkbox.vue'
 
 export default {
   name: "formOne",
-  components: { Header, Title, Button, Label, Inputs, TextComponent, Birthday },
+  components: { Header, Title, Button, Label, Inputs, TextComponent, Birthday, Checkbox },
   methods: {
-    formOne() {
+    formOneValidate() {
       let isOK = true
-      if (this.$store.state.controlFullname == true) {
-        this.isOk = true;
-      } else {
-        document.getElementById('errorFullname').style.display = 'block';
-        this.isOk = false;
+      if (this.$store.state.controlFullname == false) {
+        document.getElementById('errorFullname').style.visibility = "visible";
+        isOK = false
       }
-      if (this.$store.state.controlEmail == true) {
-        this.isOk = true;
-      } else {
-        document.getElementById('errorEmail').style.display = 'block';
-        this.isOk = false;
+      else {
+        document.getElementById('errorFullname').style.visibility = "hidden";
       }
-
+      if (this.$store.state.controlEmail == false) {
+        document.getElementById('errorEmail').style.visibility = "visible";
+        isOK = false
+      }
+      else {
+        document.getElementById('errorEmail').style.visibility = "hidden";
+      }
       if (isOK) {
         this.$router.push('/formSecond')
       }
@@ -88,8 +97,8 @@ export default {
       if (this.$store.state.controlFullname == true || this.$store.state.controlEmail == true) {
         this.$router.push('/formSecond')
       }
-    },
-  }
+    }
+  },
 }
 </script>
 

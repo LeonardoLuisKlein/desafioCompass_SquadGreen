@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     #errorBirthday {
-        margin: 0.2em 0 0 1em;
+        visibility: hidden;
     }
 }
 .datesBody {
@@ -44,7 +44,6 @@ select:focus{
     font-style: normal;
     font-weight: 400;
     font-size: 1em;
-    height: 3.7vh;
     border: 2px solid #aaaaaa;
     border-radius: 4px;
     color: #aaaaaa;
@@ -62,3 +61,26 @@ select:focus{
     color: #aaaaaa;
     content:attr(data-ph)
 }
+
+@media (max-width: 768px) {
+    .datesBody{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .daySelect{
+        order: 0;
+        width: 115.91px;
+    }
+    .monthSelect{
+        order: 1;
+        width: 115.91px;
+    }
+    .yearSelect{
+        order: 2;
+        width: 115.91px;
+    }
+    .Age{
+        order: 3;
+        width: 115.91px;
+    }
+  }

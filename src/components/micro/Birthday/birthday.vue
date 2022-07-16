@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="labelBirthday">
-            <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday *" />
+            <Label inputLabel="" className="defaultLabel phoneLabel" text="Birthday*" />
             <TextComponent text="Please enter your Age" className="mediumLowSize error" id="errorBirthday" />
         </div>
         <div class="datesBody">

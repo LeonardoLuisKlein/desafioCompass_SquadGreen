@@ -163,7 +163,6 @@ export default {
     addCertificate() {
       console.log('controlCertificates =', this.$store.state.controlCertificates)
       if (this.$store.state.controlCertificates == false) {
-        console.log("aaa")
         document.getElementById('errorCertificate').style.display = 'flex';
       }
       else {

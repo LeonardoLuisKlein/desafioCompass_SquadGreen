@@ -16,10 +16,13 @@ export default new Vuex.Store({
     teamName: "",
     institution: "",
     graduation: "",
-    fullname: "",
+    name: "",
     email: "",
+    checkbox: "",
     controlFullname: "",
     controlEmail: "",
+    controlAge: "",
+    controlCheckbox: "",
   },
   getters: {
 
@@ -28,17 +31,17 @@ export default new Vuex.Store({
   mutations: {
     setGitHub(state, github) {
       state.github = github;
-      if(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(github)){
-      localStorage.setItem("github", github);
-      this.state.controlGitHub = true;
-      } else{
+      if (/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(github)) {
+        localStorage.setItem("github", github);
+        this.state.controlGitHub = true;
+      } else {
         localStorage.setItem("github", "");
         this.state.controlGitHub = false;
       }
     },
     setCertificate(state, certificate) {
       state.certificate = certificate
-      if(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(certificate)) {
+      if (/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(certificate)) {
         this.state.controlCertificates = true;
       } else {
         localStorage.setItem("certificates", "");
@@ -51,7 +54,7 @@ export default new Vuex.Store({
     },
     setTeamName(state, teamName) {
       state.teamName = teamName;
-      if(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(teamName)) {
+      if (/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(teamName)) {
         localStorage.setItem("teamName", teamName);
         this.state.controlTeam = true;
       } else {
@@ -61,7 +64,7 @@ export default new Vuex.Store({
     },
     setInstitution(state, institution) {
       state.institution = institution;
-      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(institution)) {
+      if (/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(institution)) {
         localStorage.setItem("institution", institution);
         this.state.controlInstitution = true;
       } else {
@@ -71,7 +74,7 @@ export default new Vuex.Store({
     },
     setGraduation(state, graduation) {
       state.graduation = graduation;
-      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(graduation)) {
+      if (/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(graduation)) {
         localStorage.setItem("graduation", graduation);
         this.state.controlGraduation = true;
       } else {
@@ -79,26 +82,34 @@ export default new Vuex.Store({
         this.state.controlGraduation = false;
       }
     },
-    setFullname(state, fullname){
-      state.fullname = fullname;
-      if(/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(fullname)){
-        localStorage.setItem("fullname", fullname)
+    setFullname(state, name) {
+      state.name = name;
+      if (/^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/.test(name)) {
+        localStorage.setItem("name", name)
         this.state.controlFullname = true;
       } else {
-        localStorage.setItem("fullname", "");
+        localStorage.setItem("name", "");
         this.state.controlFullname = true;
       }
     },
     setEmail(state, email) {
       state.email = email;
-      if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)){
-      localStorage.setItem("email", email);
-      this.state.controlEmail = true;
-      } else{
+      if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)) {
+        localStorage.setItem("email", email);
+        this.state.controlEmail = true;
+      } else {
         localStorage.setItem("email", "");
         this.state.controlEmail = false;
       }
     },
+    setCheckbox(state, checkbox) {
+      state.checkbox = checkbox
+      if (checkbox.checked) {
+        this.state.controlCheckbox = true
+      } else {
+        this.state.controlCheckbox = true
+      }
+    }
   },
 
   actions: {
@@ -125,6 +136,9 @@ export default new Vuex.Store({
     },
     setEmail({ commit }, email) {
       commit("setEmail", email);
+    },
+    setCheckbox({ commit }, checkbox) {
+      commit("setCheckbox", checkbox);
     },
   },
   modules: {},

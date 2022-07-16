@@ -38,15 +38,10 @@
             flex-flow:column wrap;
             justify-content: space-evenly;
 
-            .separationName{
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-            }
-
             .emailPhoneBody {
                 display: flex;
                 justify-content: space-between;
+                align-items: flex-end;
 
                 .emailBody {
                     width: 60%;
@@ -56,11 +51,33 @@
                     width: 35%;
                 }
             }
-            #errorFullname, #errorEmail {
-                display: none;
+            #errorFullname, #errorEmail, #errorTerms {
+                visibility: hidden;
             }
 
+        }
+        .divFooter {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: flex-end;
         }
     }
     
 }
+
+.separationName{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+@media (max-width: 768px) {
+    
+    #formOne {
+        .sectionForm{
+            height: 100%;
+            width: 100%; 
+            border-radius: 0px;
+        }
+    }
+  }

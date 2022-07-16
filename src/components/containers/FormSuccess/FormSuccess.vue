@@ -10,7 +10,7 @@
                     <TextComponent text="Your data has been sent successfully!" />
                     <TextComponent text="Full Name:" :cText="this.fullname" />
                     <TextComponent text="Email: " :cText="this.email" />
-                    <TextComponent text="Birthday: " />
+                    <TextComponent text="Birthday: " :cText="this.birthday"/>
                     <TextComponent text="Age: " :cText="this.age" />
                     <TextComponent text='GitHub: ' :cText="this.github" />
                     <TextComponent text="Certificates: " />
@@ -58,9 +58,13 @@ export default {
 
     methods: {
         getLocalStorage() {
-            this.fullname = localStorage.getItem("fullname")
+            const day = localStorage.getItem("day");
+            const month = localStorage.getItem("month");
+            const year = localStorage.getItem("year");
+            this.fullname = localStorage.getItem("name")
             this.email = localStorage.getItem("email")
             this.age = localStorage.getItem("age")
+            this.birthday = `${day}/${month}/${year}`
             this.github = localStorage.getItem("github")
             this.teamName = localStorage.getItem("teamName")
             this.institution = localStorage.getItem("institution")
@@ -70,6 +74,12 @@ export default {
         clearLocalStorage() {
             localStorage.clear()
             this.$router.push('/')
+            this.$store.state.controlFullname = false
+            this.$store.state.controlEmail = false
+            this.$store.state.controlGitHub = false
+            this.$store.state.controlInstitution = false
+            this.$store.state.controlGraduation = false
+            this.$store.state.controlTeamName = false
         }
     },
 

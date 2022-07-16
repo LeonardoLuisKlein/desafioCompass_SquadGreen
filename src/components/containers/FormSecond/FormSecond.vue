@@ -63,7 +63,6 @@ export default {
     pushToFormOne() {
       this.$router.push('/')
     },
-
     pushToFormThird() {
       if (this.$store.state.controlGitHub == true) {
         this.$router.push('/formThird')

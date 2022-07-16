@@ -44,3 +44,9 @@
     color: #FF0000;
     margin-left: 0.625em;
 }
+
+@media (max-width: 768px) {
+    .error{
+        margin-left: 3.2px;
+    }
+}
