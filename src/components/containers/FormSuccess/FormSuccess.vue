@@ -13,7 +13,7 @@
                     <TextComponent text="Birthday: " :cText="this.birthday"/>
                     <TextComponent text="Age: " :cText="this.age" />
                     <TextComponent text='GitHub: ' :cText="this.github" />
-                    <TextComponent text="Certificates: " />
+                    <TextComponent text="Certificates: " :cText="this.certificates" />
                     <TextComponent text="Team Name: " :cText="this.teamName" />
                     <TextComponent text="Institution: " :cText="this.institution" />
                     <TextComponent text="Graduation: " :cText="this.graduation" />
@@ -49,10 +49,10 @@ export default {
             birthday: "",
             age: "",
             github: "",
-            certificates: "",
             teamName: "",
             institution: "",
             graduation: "",
+            certificates: [],
         }
     },
 
@@ -69,6 +69,7 @@ export default {
             this.teamName = localStorage.getItem("teamName")
             this.institution = localStorage.getItem("institution")
             this.graduation = localStorage.getItem("graduation")
+            this.certificates = localStorage.getItem("certificates")
         },
 
         clearLocalStorage() {
@@ -80,13 +81,15 @@ export default {
             this.$store.state.controlInstitution = false
             this.$store.state.controlGraduation = false
             this.$store.state.controlTeamName = false
+            this.$store.state.controlcontrolAge = false
         }
     },
 
     mounted() {
         this.getLocalStorage();
         if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false || this.$store.state.controlGitHub == false
-            || this.$store.state.controlInstitution == false || this.$store.state.controlGraduation == false || this.$store.state.controlTeamName == false) {
+            || this.$store.state.controlInstitution == false || this.$store.state.controlGraduation == false || this.$store.state.controlTeamName == false
+            || this.$store.state.controlcontrolAge == false) {
             this.$router.push('/error401')
         }
     },
