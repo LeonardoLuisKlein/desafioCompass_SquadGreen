@@ -117,7 +117,8 @@ export default {
     },
 
     pushToFormSecond() {
-      if (this.$store.state.controlFullname == true || this.$store.state.controlEmail == true) {
+      let age = localStorage.getItem("age")
+      if (this.$store.state.controlFullname == true || this.$store.state.controlEmail == true || age == null || !document.getElementById('checkbox').checked) {
         this.$router.push('/formSecond')
       }
     }
