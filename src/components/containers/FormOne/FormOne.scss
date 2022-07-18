@@ -71,6 +71,10 @@
     flex-wrap: wrap;
     align-items: flex-end;
 }
+.labelCheck {
+    display: flex;
+    align-items: center;
+}
 @media (max-width: 768px) {
     
     #formOne {

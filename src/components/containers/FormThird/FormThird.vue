@@ -25,9 +25,11 @@
                   <option value="-1" disabled hidden unselectable selected type="radio"> Certificates</option>
                   <option :value="index" v-for="(certificate, index) in this.$store.state.certificates" :key="index"
                     class="item">
-                    {{ certificate }} <Button text="X" :clickButton="test" />
+                    {{ certificate }} X 
                   </option>
+                  
                 </select>
+                
               </div>
               <div class="errorMore">
                 <Button text="+ More >" classButton="more" :clickButton="addCertificate" />
@@ -95,16 +97,12 @@ export default {
 
   data() {
     return {
-      certificateAmmount: 0
+      certificateAmmount: []
     }
   },
 
   methods: {
     ...mapActions(["setCertificates"]),
-
-    test() {
-      console.log("OPTION ELEMENT REMOVED")
-    },
 
     formThirdValidate() {
       let isOK = true

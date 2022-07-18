@@ -36,6 +36,7 @@ export default {
         this.$store.state.controlTeamName = false
         this.$store.state.controlcontrolAge = false
         this.$store.state.controlCertificates = false
+        this.$store.state.age = ""
     }
 }
 </script>

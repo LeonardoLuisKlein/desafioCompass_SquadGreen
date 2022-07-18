@@ -38,7 +38,7 @@
             <div class="Age">
                 <Label inputLabel="" className="defaultLabel dateLabel" text="Age" />
                 <div class="age">
-                    <h1 id="ageId" class="resultAge" contentEditable=false data-ph="18">{{ age }}</h1>
+                    <h1 id="ageId" class="resultAge" contentEditable=false data-ph="18">{{ this.$store.state.age }}</h1>
                 </div>
             </div>
 
@@ -67,17 +67,14 @@ export default {
 
         valueDay(e) {
             this.day = e.target.value;
-            console.log(e.target.value)
             localStorage.setItem("day", this.day);
         },
         valueMonth(e) {
             this.month = e.target.value;
-            console.log(e.target.value)
             localStorage.setItem("month", this.month);
         },
         valueYears(e) {
             this.year = e.target.value;
-            console.log(e.target.value)
             localStorage.setItem("year", this.year);
 
             let d = new Date();
@@ -94,9 +91,9 @@ export default {
             ) {
                 ageUser--;
             }
+            this.$store.state.age = ageUser
+            localStorage.setItem("age", this.$store.state.age);
 
-            this.age = ageUser
-            localStorage.setItem("age", this.age);
         },
 
         padStart(birthday) {

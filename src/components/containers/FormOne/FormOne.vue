@@ -37,15 +37,14 @@
 
             <div class="phoneBody">
               <Label inputLabel="phone" className="defaultLabel phoneLabel" text="Phone" />
-              <Inputs inputClass="inputBorder bigInput" id="phone" placeHolder="(83) 00000-0000" />
+              <Inputs inputClass="inputBorder bigInput"  v-mask="['(##) #####-####']" id="phone" placeHolder="(83) 00000-0000" maxlength="15" />
             </div>
           </div>
 
           <Birthday />
           <div class="separationName">
-            <Checkbox text="I accept the terms and privacy"/>
-            <TextComponent text="Please accpet the terms" className="mediumLowSize error" id="errorTerms"/>
-
+            <Checkbox text="I accept the terms and privacy" class="labelCheck"/>
+            <TextComponent text="Please confirm the terms" className="mediumLowSize error" id="errorTerms"/>
           </div>
           <div class="divFooter">
             <Button text="Next >" classButton="next" :clickButton="formOneValidate" />
@@ -76,7 +75,7 @@ export default {
       let isOK = true
 
       if (this.$store.state.controlFullname == false) {
-        document.getElementById('errorFullname').style.visibility = "visible";
+         document.getElementById('errorFullname').style.visibility = "visible";
         isOK = false
       }
       else {
@@ -91,9 +90,7 @@ export default {
         document.getElementById('errorEmail').style.visibility = "hidden";
       }
 
-      let age = localStorage.getItem("age")
-      console.log(age)
-      if (age == null) {
+      if (this.$store.state.age == "" ) {
         document.getElementById('errorBirthday').style.visibility = "visible";
         isOK = false
       }

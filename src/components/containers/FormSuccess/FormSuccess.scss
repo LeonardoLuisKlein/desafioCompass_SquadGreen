@@ -10,10 +10,9 @@
     
     .sectionForm {
         display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        height: 69vh;
+        height: 83vh;
         width: 40vw;
         border-radius: 20px;
         background: #FFFFFF;
