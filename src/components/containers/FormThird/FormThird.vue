@@ -161,7 +161,6 @@ export default {
     },
 
     addCertificate() {
-      console.log('controlCertificates =', this.$store.state.controlCertificates)
       if (this.$store.state.controlCertificates == false) {
         document.getElementById('errorCertificate').style.display = 'flex';
       }
@@ -182,6 +181,7 @@ export default {
   },
 
   mounted() {
+      console.log("TESTE", this.$store.state.certificates, this.$store.state.certificates.length)
     if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false || this.$store.state.controlGitHub == false) {
       this.$router.push('/error401')
     }

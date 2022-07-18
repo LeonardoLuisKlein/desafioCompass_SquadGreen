@@ -50,7 +50,7 @@ export default new Vuex.Store({
     },
     setCertificates(state, certificates) {
       state.certificates.push(certificates)
-      localStorage.setItem("certificates", certificates);
+      localStorage.setItem('certificates', certificates);
     },
     setTeamName(state, teamName) {
       state.teamName = teamName;

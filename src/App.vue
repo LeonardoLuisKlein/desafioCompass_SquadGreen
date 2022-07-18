@@ -17,5 +17,6 @@
 
 button {
   cursor: pointer;
+  border: none;
 }
 </style>

@@ -69,7 +69,7 @@ export default {
             this.teamName = localStorage.getItem("teamName")
             this.institution = localStorage.getItem("institution")
             this.graduation = localStorage.getItem("graduation")
-            this.certificates = localStorage.getItem("certificates")
+            this.certificates = localStorage.getItem("certificates");
         },
 
         clearLocalStorage() {
