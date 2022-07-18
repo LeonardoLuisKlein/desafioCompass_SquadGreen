@@ -17,8 +17,6 @@
                     <TextComponent text="Team Name: " :cText="this.teamName" />
                     <TextComponent text="Institution: " :cText="this.institution" />
                     <TextComponent text="Graduation: " :cText="this.graduation" />
-
-
                 </div>
 
 
@@ -77,6 +75,7 @@ export default {
             this.$router.push('/')
             this.$store.state.controlFullname = false
             this.$store.state.controlEmail = false
+            this.$store.state.age = ""
             this.$store.state.controlGitHub = false
             this.$store.state.controlInstitution = false
             this.$store.state.controlGraduation = false
@@ -90,7 +89,7 @@ export default {
         this.getLocalStorage();
         if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false || this.$store.state.controlGitHub == false
             || this.$store.state.controlInstitution == false || this.$store.state.controlGraduation == false || this.$store.state.controlTeamName == false
-            || this.$store.state.controlcontrolAge == false) {
+            || this.$store.state.controlcontrolAge == false ||  this.$store.state.age == "") {
             this.$router.push('/error401')
         }
     },

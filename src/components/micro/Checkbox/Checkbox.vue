@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Inputs type="checkbox" inputClass="checkbox" :v-model="text" id="checkbox"/>
+        <Inputs type="checkbox" inputClass="checkbox" :v-model="text" id="checkbox" checked/>
         <label for="checkbox">{{ text }}</label>
     </div>
 </template>
