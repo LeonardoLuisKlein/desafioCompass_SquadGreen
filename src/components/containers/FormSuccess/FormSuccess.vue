@@ -82,6 +82,7 @@ export default {
             this.$store.state.controlGraduation = false
             this.$store.state.controlTeamName = false
             this.$store.state.controlcontrolAge = false
+            this.$store.state.controlCertificates = false
         }
     },
 
