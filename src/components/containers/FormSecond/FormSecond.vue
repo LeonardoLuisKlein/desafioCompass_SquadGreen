@@ -71,7 +71,7 @@ export default {
   },
 
   mounted() {
-    if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false) {
+    if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false){
       this.$router.push('/error401')
     }
   }
