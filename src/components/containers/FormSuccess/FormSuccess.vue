@@ -8,12 +8,14 @@
 
                 <div class="formBody">
                     <TextComponent text="Your data has been sent successfully!" />
-                    <TextComponent text="Full Name:" :cText="this.fullname" />
+                    <TextComponent text="Full Name:" :cText="this.fullname"/>
                     <TextComponent text="Email: " :cText="this.email" />
-                    <TextComponent text="Birthday: " :cText="this.birthday"/>
+                    <TextComponent text="Birthday: " :cText="this.birthday" />
                     <TextComponent text="Age: " :cText="this.age" />
                     <TextComponent text='GitHub: ' :cText="this.github" />
-                    <TextComponent text="Certificates: " :cText="this.certificates" />
+                    <TextComponent text="Certificates: " />
+                    <p v-for="(certificate, index) in this.certificates" :key="index">
+                        {{ certificate }}</p>
                     <TextComponent text="Team Name: " :cText="this.teamName" />
                     <TextComponent text="Institution: " :cText="this.institution" />
                     <TextComponent text="Graduation: " :cText="this.graduation" />
@@ -67,7 +69,7 @@ export default {
             this.teamName = localStorage.getItem("teamName")
             this.institution = localStorage.getItem("institution")
             this.graduation = localStorage.getItem("graduation")
-            this.certificates = localStorage.getItem("certificates");
+            this.certificates = this.$store.state.certificates;
         },
 
         clearLocalStorage() {
@@ -75,21 +77,21 @@ export default {
             this.$router.push('/')
             this.$store.state.controlFullname = false
             this.$store.state.controlEmail = false
-            this.$store.state.age = ""
             this.$store.state.controlGitHub = false
             this.$store.state.controlInstitution = false
             this.$store.state.controlGraduation = false
             this.$store.state.controlTeamName = false
             this.$store.state.controlcontrolAge = false
             this.$store.state.controlCertificates = false
+            this.$store.state.certificates = []
+            this.$store.state.certificate = "";
         }
     },
 
     mounted() {
         this.getLocalStorage();
-        if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false || this.$store.state.controlGitHub == false
-            || this.$store.state.controlInstitution == false || this.$store.state.controlGraduation == false || this.$store.state.controlTeamName == false
-            || this.$store.state.controlcontrolAge == false ||  this.$store.state.age == "") {
+        if (this.$store.state.controlFullname == false && this.$store.state.controlEmail == false && this.$store.state.controlGitHub == false
+            && this.$store.state.controlInstitution == false && this.$store.state.controlGraduation == false && this.$store.state.controlTeamName == false) {
             this.$router.push('/error401')
         }
     },

@@ -25,7 +25,7 @@
                   <option value="-1" disabled hidden unselectable selected type="radio"> Certificates</option>
                   <option :value="index" v-for="(certificate, index) in this.$store.state.certificates" :key="index"
                     class="item">
-                    {{ certificate }} X 
+                    {{ certificate }}
                   </option>
                   
                 </select>
@@ -106,12 +106,7 @@ export default {
 
     formThirdValidate() {
       let isOK = true
-      console.log('controlTeam =', this.$store.state.controlTeam)
-      console.log('controlInstitution =', this.$store.state.controlInstitution)
-      console.log('controlGraduation =', this.$store.state.controlGraduation)
-
       if (this.$store.state.controlTeam == false) {
-        console.log("aaa")
         document.getElementById('errorTeam').style.display = 'flex';
         isOK = false
       }
@@ -141,7 +136,6 @@ export default {
     },
 
     checkCertificate() {
-      console.log(this.certificateAmmount)
       if (this.certificateAmmount > 4) {
         document.getElementById('bigError').style.display = 'flex'
         return;
@@ -150,8 +144,6 @@ export default {
       this.certificateAmmount++;
 
       this.setCertificates(this.$store.state.certificate)
-
-      console.log("TESTE", this.$store.state.certificates, this.$store.state.certificates.length)
 
       if (this.certificateAmmount > 0) {
         document.getElementById('certificatesSelect').style.display = 'flex'
@@ -179,7 +171,6 @@ export default {
   },
 
   mounted() {
-      console.log("TESTE", this.$store.state.certificates, this.$store.state.certificates.length)
     if (this.$store.state.controlFullname == false || this.$store.state.controlEmail == false || this.$store.state.controlGitHub == false) {
       this.$router.push('/error401')
     }
