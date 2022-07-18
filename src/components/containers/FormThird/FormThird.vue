@@ -35,7 +35,7 @@
                 <Button text="+ More >" classButton="more" :clickButton="addCertificate" />
                 <TextComponent text="Empty certificate is not allowed" className="mediumLowSize error"
                   id="errorCertificate" />
-                <TextComponent text="Sorry, only 5 certificates are allowed. You can remove one certificate instead"
+                <TextComponent text="Sorry, only 5 certificates are allowed."
                   className="mediumLowSize error" id="bigError" />
               </div>
             </div>
