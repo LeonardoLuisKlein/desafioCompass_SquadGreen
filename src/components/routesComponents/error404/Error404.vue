@@ -12,5 +12,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './Error404.scss';
+@import './error404.scss';
 </style>
