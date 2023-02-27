@@ -114,11 +114,15 @@ export default {
     },
 
     pushToFormSecond() {
-      if (this.$store.state.controlFullname == true || this.$store.state.controlEmail == true) {
+      if (this.$store.state.controlFullname == true && this.$store.state.controlEmail == true) {
         this.$router.push('/formSecond')
       }
     }
   },
+
+    mounted(){
+      console.log(this.$store.state.teste)
+    }
 }
 </script>
 

@@ -100,5 +100,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './FormSuccess.scss'
+@import './FormSuccess.scss';
 </style>

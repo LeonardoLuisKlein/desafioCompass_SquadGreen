@@ -23,6 +23,7 @@ export default new Vuex.Store({
     controlEmail: "",
     controlAge: "",
     controlCheckbox: "",
+    teste: "oioioi"
   },
   getters: {
 
